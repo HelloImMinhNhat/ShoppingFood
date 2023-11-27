@@ -1,12 +1,9 @@
 {
     "name": "shopping-food",
-    "version": "1.0.0",
-    "engines": {
-      "node": ">=18 <19"
-    },
+    "version": "0.0.0",
     "scripts": {
-      "dev": "cd frontend && npm start & cd backend && npm start",
-      "start": "cd backend/built && node server.js",
+      "dev": "cd frontend && npm start & cd backend/build && npm start",
+      "start": "cd backend/build && node server.js",
       "prebuild": "cd backend && npm run build",
       "build": "cd frontend && npm run build"
     }
