@@ -24,9 +24,9 @@ app.use("/api/users", userRouter);
 app.use("/api/orders", orderRouter);
 app.use("/api/categories", categoryRouter);
 
-app.use(express.static('public'));
+app.use(express.static('doanweb'));
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname,'public', 'index.html'))
+    res.sendFile(path.join(__dirname,'doanweb', 'index.html'))
 })
 
 const port = process.env.PORT || 5000;
