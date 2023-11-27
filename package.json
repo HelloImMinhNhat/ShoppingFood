@@ -3,7 +3,7 @@
     "version": "0.0.0",
     "scripts": {
       "dev": "cd frontend && npm start & cd backend/build && npm start",
-      "start": "cd frontend && npm start && cd backend/build && node server.js",
+      "start": "cd backend/build && node server.js",
       "start1": "cd frontend/npm install && ng serve",
       "prebuild": "cd backend && npm run build",
       "build": "cd frontend && npm run build"
