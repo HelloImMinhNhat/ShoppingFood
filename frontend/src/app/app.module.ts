@@ -21,7 +21,6 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { CategoryComponent } from './category/category.component';
 import { ToastrModule } from 'ngx-toastr';
 import { RegisterComponent } from './register/register.component';
-import { TextInputComponent } from './text-input/text-input.component';
 import { InputContainerComponent } from './input-container/input-container.component';
 import { InputValidationComponent } from './input-validation/input-validation.component';
 import { DefaultButtonComponent } from './default-button/default-button.component';
@@ -52,6 +51,7 @@ import { EditDiscountComponent } from './Security/admin/discount/edit-discount/e
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TextInputComponent } from './text-input/text-input.component';
 @NgModule({
   declarations: [
     AppComponent,
