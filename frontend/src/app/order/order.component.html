@@ -1,0 +1,30 @@
+<app-header></app-header>
+<app-not-found
+  [visible]="!orders || !orders.length"
+  notFoundMessage="Chưa có đơn hàng!"
+  resetLinkText="Trở về trang chủ"
+></app-not-found>
+<app-title title="Danh sách đơn hàng" fontSize="1.6rem" style="text-align: center"></app-title>
+<div class="container" >
+  <ul *ngFor="let order of orders">
+    <a class="content" routerLink="/track/{{ order.id }}">
+      <div class="item">
+        <strong>Tên khách hàng</strong>
+        {{ order.name }}
+      </div>
+      <div class="item">
+        <strong>Địa chỉ nhận hàng</strong>
+        {{ order.address }}
+      </div>
+      <div class="item">
+        <strong>Ngày đặt hàng</strong>
+        {{ order.createdAt | date }}
+      </div>
+      <div class="item">
+        <strong>Tổng tiền</strong>
+        {{ order.totalPrice }}
+      </div>
+    </a>
+  </ul>
+</div>
+<app-footer></app-footer>

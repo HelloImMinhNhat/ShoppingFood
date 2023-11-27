@@ -1,0 +1,75 @@
+<app-admin></app-admin>
+<h2>Danh mục</h2>
+<div class="container">
+  <a class="btn btn-primary" routerLink="/createDiscount">Tạo mới</a>
+  <table class="table">
+    <tr>
+      <th class="name">Tên mã giảm giá</th>
+      <th class="name">Mã giảm giá</th>
+      <th class="name">Phần trăm</th>
+    </tr>
+    <tr *ngFor="let coupon of discount">
+      <td class="name">{{ coupon.name }}</td>
+      <td class="id">{{ coupon.discountCode }}</td>
+      <td class="percent">{{ coupon.discountPercent }}</td>
+      <td>
+        <a class="btn btn-info" routerLink="/editDiscount/{{ coupon.id }}"
+          >Sửa</a
+        >
+        <a class="btn btn-danger" (click)="openModal(delete)">Xóa</a>
+
+        <ng-template #delete>
+          <div
+            class="modal-dialog-scrollable"
+            id="staticBackdrop"
+            data-bs-backdrop="static"
+            data-bs-keyboard="false"
+            tabindex="-1"
+            aria-labelledby="staticBackdropLabel"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">
+                    <b>bạn có chắc muốn xóa mã giảm giá này không !!!</b>
+                  </h1>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                    (click)="Close()"
+                  ></button>
+                </div>
+                <div class="modal-body">
+                    <p><strong>Tên Mã Giảm Giá:</strong> {{ coupon.name }}</p>
+                  <p><strong>Mã Giảm Giá:</strong> {{ coupon.discountCode }}</p>
+                  <p><strong>Phần Trăm:</strong> {{ coupon.discountPercent }}</p>
+                </div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-bs-dismiss="modal"
+                    (click)="Close()"
+                  >
+                    Close
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-danger"
+                    (click)="confirmDelete(coupon.id)"
+                  >
+                    Xóa
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </ng-template>
+      </td>
+    </tr>
+  </table>
+</div>
+<a routerLink="/Admin" class="btn btn-light">Quay về</a>

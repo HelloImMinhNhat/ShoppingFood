@@ -1,0 +1,206 @@
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    margin-top: 0.5rem;
+    min-height: 600px;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.left{
+    width: 70%;
+}
+.right{
+    width: 30%;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+
+ul{
+    display: flex;
+    flex-direction: column;
+    flex: 3 0;;
+    justify-content: space-evenly;
+    border: 1px solid #ffbbbb;
+    border-radius: 1rem;
+    list-style: none;
+    margin: 0.5rem;
+    padding: 0;
+}
+ul li{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    border-bottom: 1px solid #e4e4e4;
+}
+ul li:last-child{
+    border: none ;
+}
+
+li img{
+    width: 5rem;
+    height: 5rem;
+    border-radius: 100rem;
+    object-fit: cover;
+}
+li div{
+    padding: 1rem;
+}
+li div:not(:first-child){
+    flex-basis: 18%;
+}
+li select{
+    width: 3rem;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid lightgray;
+    font-size: 1.1rem;
+    font-weight: 100;
+}
+li .remove-button{
+    border-radius: 1rem;
+    border: none;
+    padding: 0.5rem;
+    color: #e72929;
+    opacity: 0.7;
+    outline: none;
+}
+
+li .remove-button:hover{
+    opacity: 1;
+    cursor: pointer;
+}
+.checkout{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1 3;
+    height: auto;
+    border: 1px solid #ffbbbb;
+    border-radius: 1rem;
+    padding: 0.5rem;
+    margin: 0.5rem;
+}
+.checkout>div{
+    font-size: 1.4rem;
+    margin: 1rem;
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+.Coupons{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1 3;
+    height: auto;
+    border: 1px solid #ffbbbb;
+    border-radius: 1rem;
+    padding: 0.5rem;
+    margin: 0.5rem;
+}
+.foods-count, .total-price-after,.total-price,.percent{
+    margin-bottom: 1.5rem;
+}
+.CouponCode{
+    margin-bottom: 5px;
+}
+.foods-count::before{
+    content: "Số lượng: ";
+    color: grey;
+}.percent::before{
+    content: "Giảm giá: ";
+    color: grey;
+}
+.total-price-after::before{
+    content: "Thành tiền: ";
+    color: grey;
+}
+.CouponCode::before{
+    content: "Mã giảm giá: ";
+    color: grey;
+}
+.total-price::before{
+    content: "Tạm tính: ";
+    color: grey;
+}
+.discountCode{
+    width: max;
+    border-radius: 5px;
+    padding: 5px;
+    margin-bottom: 5px;
+}
+.Coupon{
+    font-size: 1.4rem;
+    padding: 5px;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+.Coupon strong{
+    align-items: center;
+    font-size: 10px;
+}
+.Apply-Coupons{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1 3;
+    height: auto;
+    border: 1px solid #ffbbbb;
+    border-radius: 1rem;
+    padding: 0.5rem;
+    margin: 0.5rem;
+}
+.voucher ul li{
+    border: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+.Apply{
+    padding: 1rem;
+    color: white;
+    background: #e72929;
+    display: block;
+    width: 99%;
+    border-radius: 1rem;
+    text-align: center;
+    opacity: 0.7;
+    justify-self: center;
+    height: 55px;
+}
+.Apply:hover{
+    opacity: 1;
+    cursor: pointer;
+}
+.checkout a{
+    padding: 1rem;
+    color: white;
+    background: #e72929;
+    display: block;
+    width: 99%;
+    border-radius: 1rem;
+    text-align: center;
+    opacity: 0.7;
+    justify-self: center;
+}
+.checkout :hover{
+    opacity: 1;
+    cursor: pointer;
+}
+
+#enter-discountcode{
+    margin-left: 20px ;
+    width: 50%;
+}
+
+

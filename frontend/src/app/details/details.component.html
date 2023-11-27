@@ -1,0 +1,40 @@
+<app-header></app-header>
+<app-not-found
+  [visible]="!food"
+  notFoundMessage="Sản phẩm không tồn tại"
+  resetLinkText="Trở về trang chủ"
+></app-not-found>
+<div *ngIf="food" class="container">
+  <img [src]="food.imageUrl" [alt]="food.name" />
+
+  <div class="details">
+    <div class="header">
+      <span class="name">
+        {{ food.name }}
+      </span>
+    </div>
+    <div class="origins">
+      <span *ngFor="let origin of food.origins">
+        {{ origin }}
+      </span>
+    </div>
+    <div class="tags">
+      <a *ngFor="let tags of food.tags" routerLink="/tag/{{ tags }}">
+        {{ tags }}
+      </a>
+    </div>
+
+    <div class="cook-time">
+      <span>
+        Thời gian nấu khoảng <strong>{{ food.cookTime }}</strong> Phút
+      </span>
+    </div>
+    <div class="price">
+      <span>
+        {{ food.price | currency : "VND" : "symbol" }}
+      </span>
+    </div>
+    <button (click)="addToCart()">Thêm Vào Giỏ Hàng</button>
+  </div>
+</div>
+<app-footer></app-footer>

@@ -1,0 +1,16 @@
+<div class="container">
+    <h1>Tạo danh mục mới</h1>
+    <form (submit)="onSubmit()">
+      <label for="ID">Mã Danh Mục:</label>
+      <input type="text" name="ID" [(ngModel)]="Category.CateID" required /><br />
+    
+      <label for="name">Giá:</label>
+      <input type="text" name="name" [(ngModel)]="Category.name" required /><br />
+    <div class="footer">
+      <a routerLink="/AdminCategory" class="btn btn-secondary">Quay về</a>  
+      <button type="submit" class="btn btn-success" >Tạo mới</button>
+    </div>
+    </form>
+    
+  </div>
+  

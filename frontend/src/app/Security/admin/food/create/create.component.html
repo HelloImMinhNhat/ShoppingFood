@@ -1,0 +1,33 @@
+<div class="container">
+  <h1>Tạo thực phẩm mới</h1>
+  <form (submit)="onSubmit()">
+    <label for="name">Tên thực phẩm:</label>
+    <input type="text" name="name" [(ngModel)]="food.name" required /><br />
+  
+    <label for="price">Giá:</label>
+    <input type="text" name="price" [(ngModel)]="food.price" required /><br />
+  
+    <label for="tags">Tags :</label>
+    <input type="text" name="tags" [(ngModel)]="food.tags" required /><br />
+  
+    <label for="imageUrl">URL ảnh:</label>
+    <input type="text" name="imageUrl" [(ngModel)]="food.imageUrl" required /><br />
+  
+    <label for="origins">Xuất xứ :</label>
+    <input type="text" name="origins" [(ngModel)]="food.origins" required /><br />
+  
+    <label for="cookTime">Thời gian nấu:</label>
+    <input type="text" name="cookTime" [(ngModel)]="food.cookTime" required /><br />
+  
+    <label for="CateID">Danh mục:</label>
+    <select name="CateID" [(ngModel)]="food.CateID" required >
+      <option value="" disabled selected>Chọn danh mục</option>
+      <option *ngFor="let category of categories" [value]="category.CateID">{{ category.name }}</option>
+    </select><br>
+  <div class="footer">
+    <a routerLink="/AdminFood" class="btn btn-secondary">Quay về</a>  
+    <button type="submit" class="btn btn-success" >Tạo mới</button>
+  </div>
+  </form>
+  
+</div>

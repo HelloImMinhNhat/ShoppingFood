@@ -1,0 +1,76 @@
+<div class="container">
+  <h1>Chỉnh sửa thực phẩm</h1>
+  <form (submit)="onSubmit()" editFoodForm="ngForm">
+    <div class="form-group">
+      <label for="name">Tên thực phẩm:</label>
+      <input type="text" id="name" name="name" [(ngModel)]="food.name" />
+    </div>
+
+    <div class="form-group">
+      <label for="price">Giá:</label>
+      <input
+        type="number"
+        id="price"
+        name="price"
+        [(ngModel)]="food.price"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="tags">Tags:</label>
+      <input
+        type="text"
+        id="tags"
+        name="tags"
+        [(ngModel)]="tagsInput"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="imageUrl">URL ảnh:</label>
+      <input
+        type="text"
+        id="imageUrl"
+        name="imageUrl"
+        [(ngModel)]="food.imageUrl"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="origins">Xuất xứ:</label>
+      <input
+        type="text"
+        id="origins"
+        name="origins"
+        [(ngModel)]="originsInput"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="cookTime">Thời gian nấu:</label>
+      <input
+        type="text"
+        id="cookTime"
+        name="cookTime"
+        [(ngModel)]="food.cookTime"
+        required
+      />
+    </div>
+
+    <label for="CateID">Danh mục:</label>
+    <select name="CateID" [(ngModel)]="food.CateID" required>
+      <option value="" disabled selected>Chọn danh mục</option>
+      <option *ngFor="let category of categories" [value]="category.CateID">
+        {{ category.name }}
+      </option></select
+    ><br />
+    <div class="footer">
+      <a routerLink="/AdminFood" class="btn btn-secondary">Quay về</a>
+      <button type="submit" class="btn btn-success">Lưu chỉnh sửa</button>
+    </div>
+  </form>
+</div>

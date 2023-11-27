@@ -1,0 +1,572 @@
+.uudai h3 {
+    padding: 40px;
+    margin-top: 15px;
+    color: #003f73;
+    word-spacing: 1px;
+    font-weight: bolder;
+    font-size: 25.6px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-family: "Raleway", sans-serif;
+    font-weight: 500;
+    display: grid;
+    grid-template-columns: 1fr max-content 1fr;
+    grid-template-rows: 27px 0;
+    grid-gap: 20px;
+    align-items: center;
+}
+
+.uudai h3:after,
+.uudai h3:before {
+    content: " ";
+    display: block;
+    border-bottom: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    height: 5px;
+    background-color: #f8f8f8;
+}
+
+.top {
+    text-align: center;
+    padding: 35px;
+    position: relative;
+    display: block;
+}
+
+.top img {
+    margin-left: 35px;
+    transition: all 500ms ease;
+    background: rgba(0, 0, 0, 0.18);
+    cursor: pointer;
+    backface-visibility: hidden;
+}
+
+.top img:hover {
+    transform: scale(0.98);
+    filter: grayscale(0%);
+    background: rgba(40, 40, 40, 0.18);
+
+}
+
+.product-item .outstanding-product-item ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    list-style-type: none;
+    padding: 0;
+}
+
+.product-item .outstanding-product-item li a {
+    height: 20rem;
+    width: 18rem;
+    border: 1px solid whitesmoke;
+    border-radius: 1rem;
+    margin: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    text-decoration: none;
+}
+
+.product-item .outstanding-product-item li a .price {
+    color: #C69C6D;
+}
+
+.product-item .outstanding-product-item li a:hover {
+    opacity: 0.9;
+    cursor: pointer;
+}
+
+.product-item .outstanding-product-item li a img {
+    object-fit: cover;
+    height: 12.5rem;
+}
+
+.product-item .outstanding-product-item .name {
+    font-size: 20px;
+    color: black;
+}
+
+.product-item .outstanding-product-item .content {
+    margin-top: 0.3rem;
+    padding: 0.5rem 1rem;
+    position: relative;
+    height: 7rem;
+}
+
+.product-item .outstanding-product-item .favorite {
+    position: absolute;
+    top: 0.5rem;
+    right: 1rem;
+    font-size: 1.2rem;
+}
+
+.product-item .outstanding-product-item .favorite.not {
+    color: gray;
+}
+
+.product-item .outstanding-product-item .product-item-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.product-item .outstanding-product-item .origins {
+    flex: 9;
+    margin-top: 10px;
+}
+
+.product-item .outstanding-product-item .origins span {
+    border-radius: 2rem;
+    background-color: whitesmoke;
+    display: inline-block;
+    font-size: 0.8rem;
+    color: grey;
+    margin-right: 0.3rem;
+    padding: 0 0.5rem;
+    margin-top: 6px;
+}
+
+.product-item .outstanding-product-item .cook-time {
+    font-size: 0.9rem;
+    flex: 3;
+    text-align: right;
+    color: black;
+    margin-top: 10px;
+}
+
+.product-item .outstanding-product-item .prices {
+    position: absolute;
+    bottom: 10;
+    left: 0.9rem;
+    background: white;
+    padding: 0.3rem 100% 0 0;
+    margin-top: 0.7rem;
+    font-size: 14px;
+    text-align: center;
+    color: #C69C6D;
+}
+
+.product-item .new-product-item ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    list-style-type: none;
+    padding: 0;
+}
+
+.product-item .new-product-item li a {
+    height: 20rem;
+    width: 18rem;
+    border: 1px solid whitesmoke;
+    border-radius: 1rem;
+    margin: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    text-decoration: none;
+}
+
+.product-item .new-product-item li a .price {
+    color: #C69C6D;
+}
+
+.product-item .new-product-item li a:hover {
+    opacity: 0.9;
+    cursor: pointer;
+}
+
+.product-item .new-product-item li a img {
+    object-fit: cover;
+    height: 12.5rem;
+}
+
+.product-item .new-product-item .name {
+    font-size: 20px;
+    color: black;
+}
+
+.product-item .new-product-item .content {
+    margin-top: 0.3rem;
+    padding: 0.5rem 1rem;
+    position: relative;
+    height: 7rem;
+}
+
+.product-item .new-product-item .favorite {
+    position: absolute;
+    top: 0.5rem;
+    right: 1rem;
+    font-size: 1.2rem;
+}
+
+.product-item .new-product-item .favorite.not {
+    color: gray;
+}
+
+.product-item .new-product-item .product-item-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.product-item .new-product-item .origins {
+    flex: 9;
+    margin-top: 10px;
+}
+
+.product-item .new-product-item .origins span {
+    border-radius: 2rem;
+    background-color: whitesmoke;
+    display: inline-block;
+    font-size: 0.8rem;
+    color: grey;
+    margin-right: 0.3rem;
+    padding: 0 0.5rem;
+    margin-top: 6px;
+}
+
+.product-item .new-product-item .cook-time {
+    font-size: 0.9rem;
+    flex: 3;
+    text-align: right;
+    color: black;
+    margin-top: 10px;
+}
+
+.product-item .new-product-item .prices {
+    position: absolute;
+    bottom: 10;
+    left: 0.9rem;
+    background: white;
+    padding: 0.3rem 100% 0 0;
+    margin-top: 0.7rem;
+    font-size: 14px;
+    text-align: center;
+    color: #C69C6D;
+}
+
+.product-item .best-seller-product-item ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    list-style-type: none;
+    padding: 0;
+}
+
+.product-item .best-seller-product-item li a {
+    height: 20rem;
+    width: 18rem;
+    border: 1px solid whitesmoke;
+    border-radius: 1rem;
+    margin: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    text-decoration: none;
+}
+
+.product-item .best-seller-product-item li a .prices {
+    color: #C69C6D;
+}
+
+.product-item .best-seller-product-item li a:hover {
+    opacity: 0.9;
+    cursor: pointer;
+}
+
+.product-item .best-seller-product-item li a img {
+    object-fit: cover;
+    height: 12.5rem;
+}
+
+.product-item .best-seller-product-item .name {
+    font-size: 20px;
+    color: black;
+}
+
+.product-item .best-seller-product-item .content {
+    margin-top: 0.3rem;
+    padding: 0.5rem 1rem;
+    position: relative;
+    height: 7rem;
+}
+
+.product-item .best-seller-product-item .favorite {
+    position: absolute;
+    top: 0.5rem;
+    right: 1rem;
+    font-size: 1.2rem;
+}
+
+.product-item .best-seller-product-item .favorite.not {
+    color: gray;
+}
+
+.product-item .best-seller-product-item .product-item-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.product-item .best-seller-product-item .origins {
+    flex: 9;
+    margin-top: 10px;
+}
+
+.product-item .best-seller-product-item .origins span {
+    border-radius: 2rem;
+    background-color: whitesmoke;
+    display: inline-block;
+    font-size: 0.8rem;
+    color: grey;
+    margin-right: 0.3rem;
+    padding: 0 0.5rem;
+    margin-top: 6px;
+}
+
+.product-item .best-seller-product-item .cook-time {
+    font-size: 0.9rem;
+    flex: 3;
+    text-align: right;
+    color: black;
+    margin-top: 10px;
+}
+
+.product-item .best-seller-product-item .prices {
+    position: absolute;
+    bottom: 10;
+    left: 0.9rem;
+    background: white;
+    padding: 0.3rem 100% 0 0;
+    margin-top: 0.7rem;
+    font-size: 14px;
+    text-align: center;
+}
+
+.main {
+    display: flex;
+    flex-direction: row;
+}
+
+.main .category {
+    width: 20%;
+    float: left;
+    display: block;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: flex-start;
+    margin-left: 120px;
+
+}
+
+.main .product-item {
+    width: 80%;
+    float: right;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: stretch;
+    justify-content: space-evenly;
+}
+
+.category1 h3 {
+    font-family: "Roboto Slab", "HelveticaNeue", "Helvetica Neue", sans-serif;
+    margin: 0;
+    text-transform: none;
+    font-weight: 500;
+    display: inline-block;
+    padding: 2px 20px;
+    position: relative;
+    background-color: #c69c6d;
+    font-size: 14px;
+    line-height: 40px;
+    text-transform: uppercase;
+    min-width: 220px;
+    color: white;
+}
+
+.outstanding-product-item h3 {
+    width: 95%;
+    font-family: "Roboto Slab", "HelveticaNeue", "Helvetica Neue", sans-serif;
+    margin-left: 10px;
+    text-transform: none;
+    font-weight: 500;
+    display: flex;
+    justify-content: space-between;
+    padding: 2px 20px;
+    position: relative;
+    background-color: #c69c6d;
+    font-size: 14px;
+    line-height: 40px;
+    text-transform: uppercase;
+    min-width: 220px;
+    color: white;
+}
+
+.new-product-item h3 {
+    width: 95%;
+    font-family: "Roboto Slab", "HelveticaNeue", "Helvetica Neue", sans-serif;
+    margin-left: 10px;
+    text-transform: none;
+    font-weight: 500;
+    display: inline-block;
+    padding: 2px 20px;
+    position: relative;
+    background-color: #c69c6d;
+    font-size: 14px;
+    line-height: 40px;
+    text-transform: uppercase;
+    min-width: 220px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+}
+
+.best-seller-product-item h3 {
+    width: 95%;
+    font-family: "Roboto Slab", "HelveticaNeue", "Helvetica Neue", sans-serif;
+    margin-left: 10px;
+    text-transform: none;
+    font-weight: 500;
+    display: inline-block;
+    padding: 2px 20px;
+    position: relative;
+    background-color: #c69c6d;
+    font-size: 14px;
+    line-height: 40px;
+    text-transform: uppercase;
+    min-width: 220px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+}
+
+.category1 ul {
+    width: 100%;
+    list-style-type: none;
+    text-transform: none;
+    font-weight: 4;
+    display: inline-block;
+    padding: 0px 20px;
+    position: relative;
+}
+
+.category1 ul li {
+    margin-top: 20px;
+}
+
+.category1 ul li a {
+    border-radius: 1rem;
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+    font-family: "Roboto Slab", "HelveticaNeue", "Helvetica Neue", sans-serif;
+    color: #C69C6D;
+}
+
+.category1 ul li a:hover {
+    color: #ddae78;
+}
+
+
+.category .category2 ul {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    flex-wrap: wrap;
+    list-style-type: none;
+    padding: 0;
+}
+
+.category .category2 li a {
+    border: 1px solid whitesmoke;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    text-decoration: none;
+    margin-top: 10px;
+}
+
+.category .category2 li a .prices {
+    color: #C69C6D;
+}
+
+.category .category2 li a:hover {
+    opacity: 0.9;
+    cursor: pointer;
+}
+
+.category .category2 li a img {
+    object-fit: cover;
+    height: 60px;
+    width: 80px;
+}
+
+.category .category2 .name {
+    font-size: 14px;
+    color: black;
+}
+
+.category .category2 .content {
+    padding: 0.5rem 1rem;
+    position: relative;
+}
+
+.category .category2 .prices {
+    position: absolute;
+    bottom: 10;
+    left: 0.9rem;
+    background: white;
+    padding: 0 100% 0 0;
+    margin-top: 0.7rem;
+    font-size: 14px;
+    text-align: center;
+}
+
+.category2 h3 {
+    font-family: "Roboto Slab", "HelveticaNeue", "Helvetica Neue", sans-serif;
+    margin: 0;
+    text-transform: none;
+    font-weight: 500;
+    display: inline-block;
+    padding: 2px 20px;
+    position: relative;
+    background-color: #c69c6d;
+    font-size: 14px;
+    line-height: 40px;
+    text-transform: uppercase;
+    min-width: 220px;
+    color: white;
+}
+:host /deep/ .ngx-pagination {
+    padding-left: 0px;
+  }
+  
+  :host /deep/.ngx-pagination .current,
+  .btn-info {
+    background: none !important;
+    border: transparent;
+    border-radius: 200px;
+    color: black !;
+  }
+  
+  :host /deep/.ngx-pagination .current:hover {
+    border-radius: 200px;
+    border: transparent;
+  }
+
+.buttonnextprev button{
+    background-color:#C69C6D;
+    border: none;
+    color: #f8f8f8;
+    align-items: center !important;
+    margin-right: 5px;
+}
+.buttonnextprev button i{
+   font-size: 20px;
+   margin-right: 5px;
+}

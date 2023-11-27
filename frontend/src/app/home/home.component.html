@@ -1,0 +1,212 @@
+<app-header></app-header>
+<app-banner></app-banner>
+
+<div class="top">
+  <img
+    src="//bizweb.dktcdn.net/100/053/643/themes/877493/assets/banner-3.jpg?1676015641182"
+  />
+  <img
+    src="//bizweb.dktcdn.net/100/053/643/themes/877493/assets/banner-4.jpg?1676015641182"
+  />
+  <div class="overlay"></div>
+</div>
+<div class="main">
+  <div class="category">
+    <div class="category1">
+      <h3>Danh mục sản phẩm</h3>
+      <ul>
+        <li *ngFor="let category of categories">
+          <a routerLink="/category/{{ category.CateID }}">
+            <div class="nameCT">
+              {{ category.name }}
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="category2">
+      <h3>Sản phẩm bán chạy</h3>
+      <ul>
+        <li *ngFor="let food of foods.slice(0, 3)">
+          <a routerLink="/food/{{ food.id }}">
+            <img [src]="food.imageUrl" [alt]="food.name" />
+            <div class="content">
+              <div class="name">
+                {{ food.name }}
+              </div>
+              <div class="prices">
+                <span>
+                  {{ food.price | currency : "VND" : "symbol" }}
+                </span>
+              </div>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="product-item">
+    <div class="outstanding-product-item">
+      <h3>
+        Sản phẩm nổi bật
+        <div class="buttonnextprev">
+          <button type="button" (click)="changeProductfoods(-1)">
+            <i class="fas fa-angle-left"></i>
+          </button>
+          <button
+            type="button"
+            (click)="changeProductfoods(1)"
+            [disabled]="isLastProduct"
+          >
+            <i class="fas fa-angle-right"></i>
+          </button>
+        </div>
+      </h3>
+      <ul>
+        <li
+          *ngFor="
+            let food of foods.slice(
+              currentProductIndex,
+              currentProductIndex + 3
+            )
+          "
+        >
+          <a routerLink="/food/{{ food.id }}">
+            <img [src]="food.imageUrl" [alt]="food.name" />
+            <div class="content">
+              <div class="name">
+                {{ food.name }}
+              </div>
+              <div class="product-item-footer">
+                <div class="origins">
+                  <span *ngFor="let origin of food.origins">
+                    {{ origin }}
+                  </span>
+                </div>
+
+                <div class="cook-time">
+                  <span><i class="far fa-clock"></i></span>
+                  {{ food.cookTime }}
+                </div>
+              </div>
+              <div class="prices">
+                <span>
+                  {{ food.price | currency : "VND" : "symbol" }}
+                </span>
+              </div>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="new-product-item">
+      <h3>
+        Sản phẩm mới
+        <div class="buttonnextprev">
+          <button type="button" (click)="changeProductfoodsCT1(-1)">
+            <i class="fas fa-angle-left"></i>
+          </button>
+          <button
+            type="button"
+            (click)="changeProductfoodsCT1(+1)"
+            [disabled]="isLastProduct1"
+          >
+            <i class="fas fa-angle-right"></i>
+          </button>
+        </div>
+      </h3>
+      <ul>
+        <li
+          *ngFor="
+            let food of food1.slice(
+              currentProductIndexx,
+              currentProductIndexx + 3
+            )
+          "
+        >
+          <a routerLink="/food/{{ food.id }}">
+            <img [src]="food.imageUrl" [alt]="food.name" />
+            <div class="content">
+              <div class="name">
+                {{ food.name }}
+              </div>
+              <div class="product-item-footer">
+                <div class="origins">
+                  <span *ngFor="let origin of food.origins">
+                    {{ origin }}
+                  </span>
+                </div>
+
+                <div class="cook-time">
+                  <span><i class="far fa-clock"></i></span>
+                  {{ food.cookTime }}
+                </div>
+              </div>
+              <div class="prices">
+                <span>
+                  {{ food.price | currency : "VND" : "symbol" }}
+                </span>
+              </div>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="best-seller-product-item">
+      <h3>
+        Sản phẩm bán chạy trong tuần
+        <div class="buttonnextprev">
+          <button type="button" (click)="changeProductfoodsCT3(-1)">
+            <i class="fas fa-angle-left"></i>
+          </button>
+          <button
+            type="button"
+            (click)="changeProductfoodsCT3(1)"
+            [disabled]="isLastProduct2"
+          >
+            <i class="fas fa-angle-right"></i>
+          </button>
+        </div>
+      </h3>
+      <ul>
+        <li
+          *ngFor="
+            let food of food2.slice(
+              currentProductIndexxx,
+              currentProductIndexxx + 3
+            )
+          "
+        >
+          <a routerLink="/foods/{{ food.id }}">
+            <img [src]="food.imageUrl" [alt]="food.name" />
+            <div class="content">
+              <div class="name">
+                {{ food.name }}
+              </div>
+              <div class="product-item-footer">
+                <div class="origins">
+                  <span *ngFor="let origin of food.origins">
+                    {{ origin }}
+                  </span>
+                </div>
+
+                <div class="cook-time">
+                  <span><i class="far fa-clock"></i></span>
+                  {{ food.cookTime }}
+                </div>
+              </div>
+              <div class="prices">
+                <span>
+                  {{ food.price | currency : "VND" : "symbol" }}
+                </span>
+              </div>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>

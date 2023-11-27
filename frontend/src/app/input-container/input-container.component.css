@@ -1,0 +1,12 @@
+
+label {
+    display: inline-block;
+    margin-bottom: 10px;
+    position: absolute;
+    padding: 0 10px;
+    transform: translate(20px, -2.5px);
+    font-size: 14px;
+}
+.content{
+    margin-bottom:25px;
+  }

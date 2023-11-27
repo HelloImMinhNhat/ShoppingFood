@@ -1,0 +1,25 @@
+.container{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  button{
+    border: none;
+    background: linear-gradient(45deg, #f2b94c, #f2b94c);
+    color: white;
+    padding: 0 32px;
+    border-radius: 100px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 18px;
+    height: 55px;
+    cursor: pointer;
+    width: 450px;
+  }
+  
+  button:hover{
+  cursor: pointer;
+  opacity: 1;
+  }
+  

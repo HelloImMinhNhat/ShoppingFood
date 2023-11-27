@@ -1,0 +1,13 @@
+input[type='text'],
+input[type='email'],
+input[type='password']{
+    border: 1px solid black;
+    color: black;
+    height: 55px;
+    padding: 0 2rem;
+    width: 450px;
+    outline: none;
+    transition: background .5s;
+    font-size: 18px;
+    border-radius: 100px;
+}

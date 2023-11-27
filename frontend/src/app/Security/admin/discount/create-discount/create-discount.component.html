@@ -1,0 +1,15 @@
+<div class="container">
+  <h1>Tạo danh mã giảm giá mới</h1>
+  <form (submit)="onSubmit()">
+    <label for="name">Tên Mã Giảm Giá:</label>
+    <input type="text" name="name" [(ngModel)]="coupon.name" required /><br />
+    <label for="discountCode">Mã Giảm Giá:</label>
+    <input type="text" name="discountCode" [(ngModel)]="coupon.discountCode" required /><br />
+    <label for="discountPercent">Phần Trăm:</label>
+    <input type="text" name="discountPercent" [(ngModel)]="coupon.discountPercent" required /><br />
+    <div class="footer">
+      <a routerLink="/AdminDiscount" class="btn btn-secondary">Quay về</a>
+      <button type="submit" class="btn btn-success">Tạo mới</button>
+    </div>
+  </form>
+</div>

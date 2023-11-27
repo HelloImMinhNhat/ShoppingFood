@@ -1,0 +1,22 @@
+<div class="container">
+    <h1>Chỉnh sửa mã giảm giá</h1>
+    <form (submit)="onSubmit()" editCouponForm="ngForm">
+      <div class="form-group">
+        <label for="name">Tên Mã Giảm Giá:</label>
+        <input type="text" id="name" name="name" [(ngModel)]="coupon.name" />
+      </div>
+      <div class="form-group">
+        <label for="name">Mã Giảm Giá:</label>
+        <input type="text" id="discountCode" name="discountCode" [(ngModel)]="coupon.discountCode" />
+      </div>
+      <div class="form-group">
+        <label for="name">Phần Trăm:</label>
+        <input type="text" id="discountPercent" name="discountPercent" [(ngModel)]="coupon.discountPercent" />
+      </div>
+      <div class="footer">
+        <a routerLink="/AdminDiscount" class="btn btn-secondary">Quay về</a>
+        <button type="submit" class="btn btn-success">Lưu chỉnh sửa</button>
+      </div>
+    </form>
+  </div>
+  

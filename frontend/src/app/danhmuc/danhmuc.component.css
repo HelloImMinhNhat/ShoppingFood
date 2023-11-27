@@ -1,0 +1,131 @@
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; 
+    min-height: 600px;
+}
+.category {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; 
+    max-height: 35px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+.category a{
+    background-color: #f0f0f0;
+    padding: 0.3rem 1rem;
+    margin: 0.2rem 0.15rem;
+    border-radius: 10rem;
+    font-weight: 600;
+    color: black;
+    font-family: "Roboto Slab", "HelveticaNeue", "Helvetica Neue", sans-serif;
+    border-radius: 50px;
+    border: 1px solid black;
+    margin-right: 15px;
+}
+.category a:hover{
+    background-color: #212529;
+    color: #f0f0f0;
+}
+
+.container .product ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    list-style-type: none;
+    padding: 0;
+}
+
+.container .product li a {
+    height: 25rem;
+    width: 18rem;
+    border: 1px solid whitesmoke;
+    border-radius: 1rem;
+    margin: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    text-decoration: none;
+}
+
+.container .product li a .price {
+    color: #C69C6D;
+}
+
+.container .product li a:hover {
+    opacity: 0.9;
+    cursor: pointer;
+}
+
+.container .product li a img {
+    object-fit: cover;
+    height: 12.5rem;
+}
+
+.container .product .name {
+    font-size: 20px;
+    color: black;
+}
+
+.container .product .content {
+    margin-top: 0.3rem;
+    padding: 0.5rem 1rem;
+    position: relative;
+    height: 7rem;
+}
+
+.container .product .favorite {
+    position: absolute;
+    top: 0.5rem;
+    right: 1rem;
+    font-size: 1.2rem;
+}
+
+.container .product .favorite.not {
+    color: gray;
+}
+
+.container .product .container .product-item-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.container .product .origins {
+    flex: 9;
+    margin-top: 10px;
+}
+
+.container .product .origins span {
+    border-radius: 2rem;
+    background-color: whitesmoke;
+    display: inline-block;
+    font-size: 0.8rem;
+    color: grey;
+    margin-right: 0.3rem;
+    padding: 0 0.5rem;
+    margin-top: 6px;
+}
+
+.container .product .cook-time {
+    font-size: 0.9rem;
+    flex: 3;
+    text-align: right;
+    color: black;
+    margin-top: 10px;
+}
+
+.container .product .prices {
+    position: absolute;
+    bottom: 10;
+    left: 0.9rem;
+    background: white;
+    padding: 0.3rem 100% 0 0;
+    margin-top: 0.7rem;
+    font-size: 14px;
+    text-align: center;
+    color: #C69C6D;
+}
+

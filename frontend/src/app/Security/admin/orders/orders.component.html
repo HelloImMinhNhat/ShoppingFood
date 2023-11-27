@@ -1,0 +1,27 @@
+<app-admin></app-admin>
+<h2>Đơn hàng</h2>
+<div class="content">
+  <a class="btn btn-primary">Tạo mới</a>
+  <table class="table">
+    <tr>
+      <th class="name">Tên khách hàng</th>
+      <th class="address">Địa chỉ</th>
+      <th class="date">Ngày đặt</th>
+      <th class="status">Trạng thái</th>
+      <th class="total">Tổng</th>
+    </tr>
+    <tr *ngFor="let order of orders">
+      <td class="name">{{ order.name }}</td>
+      <td class="address">{{ order.address }}</td>
+      <td class="date">{{ order.createdAt | date }}</td>
+      <td class="status">{{ order.status }}</td>
+      <td class="total">{{ order.totalPrice }}</td>
+
+      <td>
+        <a class="btn btn-info">Sửa</a>
+        <a class="btn btn-danger">Xóa</a>
+      </td>
+    </tr>
+  </table>
+</div>
+<a routerLink="/Admin" class="btn btn-light">Quay về</a>

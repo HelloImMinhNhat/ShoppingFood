@@ -1,0 +1,25 @@
+<div class="container">
+    <h1>Chỉnh sửa danh mục</h1>
+    <form (submit)="onSubmit()" editFoodForm="ngForm">
+        <div class="form-group">
+          <label for="CateID">Mã danh mục:</label>
+          <input
+            type="text"
+            id="CateID"
+            name="CateID"
+            [(ngModel)]="categories.CateID"
+            required
+          />
+        </div>
+      <div class="form-group">
+        <label for="name">Tên Danh Mục:</label>
+        <input type="text" id="name" name="name" [(ngModel)]="categories.name" />
+      </div>
+  
+      <div class="footer">
+        <a routerLink="/AdminCategory" class="btn btn-secondary">Quay về</a>
+        <button type="submit" class="btn btn-success">Lưu chỉnh sửa</button>
+      </div>
+    </form>
+  </div>
+  

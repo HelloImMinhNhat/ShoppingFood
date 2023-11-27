@@ -1,0 +1,190 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    list-style: none;
+    scroll-behavior: smooth ;
+}
+.header{
+    display: flex;
+    flex-direction: row;
+    background-color: #212020;
+}
+.header .logo{
+    width: 40%;
+    float: left;
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: nowrap;
+    align-content: stretch;
+    justify-content: space-evenly;
+}
+.header .menu{
+    width: 45%;
+    float: right;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between
+}
+.menu ul{
+    display: flex;
+}
+.menu ul li{
+    margin: 15px;
+    text-align: center;
+    margin-left: 30px;
+}
+.menu ul li svg{
+    font-size: 50px;
+    color: #f2b94c;
+    margin-right: 15px;
+}
+.menu ul li p{
+    margin-top: 10px;
+    font-size: 9.5px;
+    font-weight: 700;
+    text-align: left;
+}
+.menu ul li a{
+    text-align: center;
+    text-decoration: none;
+    color: rgb(41, 41, 41);
+}
+.menu ul li a:hover{
+    color: rgb(0, 0, 0);
+    
+}
+.menu ul li a svg{
+    text-align: center;
+    font-size: 23px;
+}
+.tasbar{
+    display: flex;
+    flex-direction: row;
+    background-color: #212020;
+}
+.tasbar .left{
+    width: 67%;
+    float: left;
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: nowrap;
+    align-content: stretch;
+    justify-content: space-evenly;
+}
+.tasbar .right{
+    float: right;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.right svg{
+    color: #f2b94c;
+    margin-left: 15px;
+    margin-right: 15px;
+    font-size: 20px;
+}
+
+.right input{
+    border-radius: 20px;
+    padding: 10px;
+}
+.left ul{
+    display: flex;
+    text-align: center;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center
+}
+.left ul li{
+    padding: 13px 40px 13px 0px;
+}
+.left ul li a{
+    text-decoration: none;
+    color: #d9d9d9;
+    font-size: 16px;
+    font-weight: 700;
+}
+.left ul li a:hover{
+    color: white;
+}
+.box-submenu{
+    display: none;
+    z-index: 9999;
+}
+.left ul li:hover .box-submenu{
+    display: block;
+    position: absolute;
+    background-color: #4b4b4b;
+    margin-left: -15px;
+    border-radius: 10px;
+}
+.left ul li:hover .box-submenu ul{
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+.left ul li:hover .box-submenu ul li{
+    width: 150px;
+    text-align: left;
+    border-bottom: dotted 1px white;
+    border-radius: 0;
+    padding: 5px;
+    border-radius: 5px;
+}
+.left ul li:hover .box-submenu ul li:last-child{
+    border-bottom: none;
+}
+.left ul li:hover .box-submenu ul li a:hover{
+    color: white;
+}
+.right a{
+    text-decoration: none;
+}
+.right ul li:hover .box-submenu{
+    display: block;
+    position: absolute;
+    background-color: #4b4b4b;
+    margin-left: -70px;
+    border-radius: 10px;
+}
+.right ul li:hover .box-submenu ul{
+    display: block;
+    margin: 0;
+    padding: 0;
+
+}
+.right ul li:hover .box-submenu ul li{
+    width: 180px;
+    text-align: left;
+    border-bottom: 1px solid white;
+    border-radius: 5px;
+    padding: 5px;
+}
+.right ul li:hover .box-submenu ul li:last-child{
+    border-bottom: none;
+}
+.right ul li:hover .box-submenu ul li a:hover{
+    color: white;
+}
+.right ul{
+    display: flex;
+    text-align: center;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center
+}
+.right ul li a{
+    text-decoration: none;
+    color: #d9d9d9;
+    font-size: 16px;
+    font-weight: 700;
+    margin-left: 10px;
+}
+.right ul li a:hover{
+    color: white;
+}
+
+

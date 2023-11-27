@@ -1,0 +1,48 @@
+<app-header></app-header>
+<body>
+  <div class="container1">
+    <div class="login-left">
+      <div class="login-header1">
+        <h1>
+          Welcome to,<br />
+          Shopping Food
+        </h1>
+      </div>
+      <form [formGroup]="loginForm" (ngSubmit)="submit()" class="login-form">
+        <div class="login-form-content">
+          <div class="form-item">
+            <label for="email">Enter email</label>
+            <input type="email" formControlName="email" />
+          </div>
+          <div class="error-list"*ngIf="fc.email.errors && isSubmitted" >
+            <div *ngIf="fc.email.errors.required">Email không được trông</div>
+            <div *ngIf="fc.email.errors.email">Email không chính xác</div>
+          </div>
+          <div class="form-item">
+            <label for="password">Enter password</label>
+            <input type="password" formControlName="password" />
+          </div>
+          <div class="error-list"*ngIf="fc.password.errors && isSubmitted" >
+            <div *ngIf="fc.password.errors.required">Password không được trông</div>
+            <div *ngIf="fc.password.errors.password">Password không chính xác</div>
+          </div>
+          <div class="form-item">
+            <div class="checkbox">
+              <input type="checkbox" id="rememberMeCheckbox" checked />
+              <label for="rememberMeCheckbox" class="checkboxLabel"
+                >Remember Me</label
+              >
+            </div>
+          </div>
+          <button type="submit">Log In</button>
+          <div class="register">
+            Bạn chưa có tài khoản? &nbsp;
+            <a routerLink="/register" [queryParams]="{ returnUrl: returnUrl }">
+              Đăng Ký
+            </a>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>

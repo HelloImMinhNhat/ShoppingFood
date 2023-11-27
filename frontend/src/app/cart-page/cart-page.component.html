@@ -1,0 +1,97 @@
+<app-header></app-header>
+<app-title title="Giỏ Hàng" margin="1.5rem 0 0 2.5rem"></app-title>
+<app-not-found
+  [visible]="!cart || !cart.items.length"
+  notFoundMessage="Giỏ hàng trống!"
+  resetLinkText="trở về trang chủ"
+></app-not-found>
+<div class="container">
+  <div class="left">
+    <ul>
+      <li *ngFor="let cartItem of cart.items">
+        <div>
+          <img [src]="cartItem.food.imageUrl" [alt]="cartItem.food.name" />
+        </div>
+        <div>
+          <a routerLink="/food/{{ cartItem.food.id }}">
+            {{ cartItem.food.name }}
+          </a>
+        </div>
+        <div>
+          <select
+            #quantitySelect
+            [value]="cartItem.quantity"
+            (change)="changeQuantity(cartItem, quantitySelect.value, percent)"
+          >
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+        </div>
+        <div>
+          {{ cartItem.price | currency : "VND" : "symbol" }}
+        </div>
+
+        <div>
+          <button class="remove-button" (click)="removeFromCart(cartItem)">
+            Xóa
+          </button>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="right">
+    <div class="checkout">
+      <div>
+        <div class="foods-count">{{ cart.totalCount }}</div>
+        <div class="total-price">{{ cart.totalPrice | number }} vnđ</div>
+        <div class="percent" *ngIf="percent > 1">{{ percent }} %</div>
+        <div class="total-price-after">
+          {{ cart.totalPrice_After | number }} vnđ
+        </div>
+      </div>
+      <a routerLink="/checkout">Thanh Toán</a>
+    </div>
+    <div class="Coupons">
+      <form [formGroup]="couponform" (ngSubmit)="submit()" class="Coupon">
+        <label class="CouponCode" for="coupon"></label>
+        <input
+          class="discountCode"
+          type="text"
+          name="coupon"
+          formControlName="discountCode"
+          #couponInput
+        />
+        <button class="Apply btn btn-success" type="submit">Áp dụng</button>
+        <strong *ngIf="tietkiem > 0"
+          >** Bạn đã tiết kiệm được {{ tietkiem }} khi áp dụng mã giảm giá
+          **</strong
+        >
+      </form>
+    </div>
+    <div class="Apply-Coupons" *ngIf="cart.couponItem.length > 0">
+      <p class="name-coupons">Voucher áp dụng</p>
+      <div class="voucher">
+        <ul>
+          <li *ngFor="let couponItem of cart.couponItem">
+            <div class="coupon-name">
+              {{ couponItem.name }}
+            </div>
+
+            <div>
+              <button
+                class="remove-button"
+                (click)="removeCouponFromCart(couponItem)"
+              >
+                Xóa
+              </button>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

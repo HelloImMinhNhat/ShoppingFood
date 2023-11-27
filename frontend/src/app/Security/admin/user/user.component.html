@@ -1,0 +1,26 @@
+<app-admin></app-admin>
+<h2>Tài khoản</h2>
+<div class="content">
+  <a class="btn btn-primary">Tạo mới</a>
+  <table class="table">
+    <tr>
+      <th class="name">Tên khách hàng</th>
+      <th class="email">Tên đăng nhập</th>
+      <th class="pass">Mật Khẩu</th>
+      <th class="address">Địa chỉ</th>
+      <th class="admin">Loại tài khoản</th>
+    </tr>
+    <tr *ngFor="let user of users">
+      <td class="name">{{ user.name }}</td>
+      <td class="email">{{ user.email }}</td>
+      <td class="pass">{{ user.password }}</td>
+      <td class="address">{{ user.address }}</td>
+      <td class="admin" id="Admin">{{ user.isAdmin ? 'Quản trị viên' : 'Khách hàng' }}</td>
+      <td>
+        <a class="btn btn-info">Sửa</a>
+        <a class="btn btn-danger">Xóa</a>
+      </td>
+    </tr>
+  </table>
+</div>
+<a routerLink="/Admin" class="btn btn-light">Quay về</a>

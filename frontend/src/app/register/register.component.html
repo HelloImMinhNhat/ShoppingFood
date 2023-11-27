@@ -1,0 +1,72 @@
+<app-header></app-header>
+<body>
+  <div class="container1">
+    <div class="login-left">
+      <div class="login-header1">
+        <h1>
+          Welcome to,<br />
+          Shopping Food
+        </h1>
+      </div>
+      <form [formGroup]="registerForm" (ngSubmit)="submit()" class="login-form">
+        <div class="login-form-content">
+          <div class="form-item">
+            <text-input
+              [control]="fc.name"
+              [showErrorsWhen]="isSubmitted"
+              label="Enter Name"
+            ></text-input>
+          </div>
+          <div class="form-item">
+            <text-input
+              [control]="fc.email"
+              [showErrorsWhen]="isSubmitted"
+              label="Enter Email"
+              type="email"
+            >
+              `</text-input
+            >
+          </div>
+          <div class="form-item">
+            <text-input
+              [control]="fc.address"
+              [showErrorsWhen]="isSubmitted"
+              label="Enter Address"
+            >
+              `</text-input
+            >
+          </div>
+          <div class="form-item">
+            <text-input
+              [control]="fc.password"
+              [showErrorsWhen]="isSubmitted"
+              label="Enter password"
+              type="password"
+            >
+              `</text-input
+            >
+          </div>
+          <div class="form-item">
+            <text-input
+              [control]="fc.confirmPassword"
+              [showErrorsWhen]="isSubmitted"
+              label="Confirm Password"
+              type="password"
+            >
+              `</text-input
+            >
+          </div>
+
+          <default-button text="Đăng ký"></default-button>
+          <div class="login">
+            Bạn đã có tài khoản? &nbsp;
+            <a routerLink="/login" [queryParams]="{ returnUrl: returnUrl }">
+              Đăng nhập
+            </a>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+<app-footer></app-footer>

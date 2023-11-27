@@ -1,0 +1,43 @@
+<app-admin></app-admin>
+<h2>Danh mục </h2>
+<div class="container">
+  <a class="btn btn-primary" routerLink="/createCategory">Tạo mới</a>
+  <table class="table">
+    <tr>
+      <th class="id">ID</th>
+      <th class="name">Tên danh mục</th>
+    </tr>
+    <tr *ngFor="let category of categories">
+      <td class="id">{{ category.CateID }}</td>
+      <td class="name">{{ category.name }}</td>
+
+      <td>
+        <a class="btn btn-info" routerLink="/editCategory/{{category.id}}">Sửa</a>
+        <a class="btn btn-danger" (click)="openModal(delete)">Xóa</a>
+
+        <ng-template #delete>
+          <div class="modal-dialog-scrollable" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel"><b>bạn có chắc muốn xóa sản phẩm này không !!!</b></h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="Close()"></button>
+                </div>
+                <div class="modal-body">
+                  <p><strong>Mã Danh Mục:</strong> {{ category.CateID }}</p>
+                  <p><strong>Tên Danh Mục:</strong> {{ category.name }}</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="Close()">Close</button>
+                  <button type="button" class="btn btn-danger" (click)="confirmDelete(category.id)">Xóa</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </ng-template>
+
+      </td>
+    </tr>
+  </table>
+</div>
+<a routerLink="/Admin" class="btn btn-light">Quay về</a>

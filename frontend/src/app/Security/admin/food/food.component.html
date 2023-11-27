@@ -1,0 +1,57 @@
+<app-admin></app-admin>
+<h2>Sản phẩm</h2>
+<div class="container">
+  <a class="btn btn-outline-primary" routerLink="/createFood">Tạo mới</a>
+  <table class="table">
+    <tr>
+      <th>Tên sản phẩm</th>
+      <th>Giá</th>
+      <th>Thời gian nấu</th>
+      <th>Danh mục</th>
+      <th>Hình ảnh</th>
+    </tr>
+    <tr *ngFor="let food of foods">
+      <td>{{ food.name }}</td>
+      <td>{{ food.price }}</td>
+      <td>{{ food.cookTime }}</td>
+      <td>{{ food.CateID }}</td>
+      <td><img [src]="food.imageUrl" [alt]="food.name" /></td>
+
+      <td>
+        <a routerLink="/editFood/{{food.id}}" class="btn btn-info">Sửa</a>
+        <a (click)="openModal(delete)" class="btn btn-danger">Xóa</a>
+
+
+        <ng-template #delete>
+          <div class="modal-dialog-scrollable" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel"><b>bạn có chắc muốn xóa sản phẩm này không !!!</b></h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="Close()"></button>
+                </div>
+                <div class="modal-body">
+                  <p><strong>Tên món ăn:</strong> {{ food.name }}</p>
+                  <p><strong>Giá:</strong> {{ food.price }}</p>
+                  <p><strong>Thời gian nấu:</strong> {{ food.cookTime }}</p>
+                  <p><strong>Loại món ăn:</strong> {{ food.CateID }}</p>
+                  <p><strong>Hình ảnh</strong><img [src]="food.imageUrl" [alt]="food.name" /></p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="Close()">Close</button>
+                  <button type="button" class="btn btn-danger" (click)="confirmDelete(food.id)">Xóa</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </ng-template>
+
+
+      </td>
+    </tr>
+  </table>
+</div>
+<a routerLink="/Admin" class="btn btn-light">Quay về</a>
+
+
+
