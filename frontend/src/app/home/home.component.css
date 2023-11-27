@@ -542,11 +542,11 @@
     min-width: 220px;
     color: white;
 }
-:host /deep/ .ngx-pagination {
+:host deep.ngx-pagination {
     padding-left: 0px;
   }
   
-  :host /deep/.ngx-pagination .current,
+  :host deep.ngx-pagination .current,
   .btn-info {
     background: none !important;
     border: transparent;
@@ -554,7 +554,7 @@
     color: black !;
   }
   
-  :host /deep/.ngx-pagination .current:hover {
+  :host deep.ngx-pagination .current:hover {
     border-radius: 200px;
     border: transparent;
   }
