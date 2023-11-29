@@ -14,7 +14,7 @@ dbConnect();
 const app = express();
 app.use(cors({
     credentials: true,
-    origin: ['http://localhost:4200']
+    origin: ['http://localhost:5000']
 }));
 app.use(express.json());
 
