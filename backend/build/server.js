@@ -27,9 +27,13 @@ exports.app.use("/api/coupons", coupon_router_1.default);
 exports.app.use("/api/users", user_router_1.default);
 exports.app.use("/api/orders", order_router_1.default);
 exports.app.use("/api/categories", category_router_1.default);
-exports.app.use(express_1.default.static(path_1.default.join(__dirname, '..', '..', 'frontend', 'dist', 'doanweb')));
+// app.use(express.static(path.join(__dirname,'..', '..', 'frontend', 'dist','doanweb')));
+// app.get('*', (req, res) => {
+//     res.sendFile(path.join(__dirname,'..', '..', 'frontend', 'dist', 'doanweb','index.html'));
+// });
+exports.app.use(express_1.default.static('public'));
 exports.app.get('*', function (req, res) {
-    res.sendFile(path_1.default.join(__dirname, '..', '..', 'frontend', 'dist', 'doanweb', 'index.html'));
+    res.sendFile(path_1.default.join(__dirname, 'public', 'index.html'));
 });
 var port = process.env.PORT || 5000;
 exports.app.listen(port, function () {
