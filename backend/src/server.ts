@@ -24,21 +24,21 @@ app.use("/api/users", userRouter);
 app.use("/api/orders", orderRouter);
 app.use("/api/categories", categoryRouter);
 
-app.use(express.static(path.join(__dirname,'..', '..', 'frontend', 'dist')));
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname,'..', '..', 'frontend', 'dist', 'index.html'));
-});
-
-// const frontendPath = path.join(__dirname, '..', '..', 'frontend', 'dist');
-// console.log('Static Files Path:', frontendPath);
-
-// app.use(express.static(frontendPath));
-
+// app.use(express.static(path.join(__dirname,'..', '..', 'frontend', 'dist')));
 // app.get('*', (req, res) => {
-//     const indexPath = path.join(frontendPath, 'index.html');
-//     console.log('Sending file:', indexPath);
-//     res.sendFile(indexPath);
+//     res.sendFile(path.join(__dirname,'..', '..', 'frontend', 'dist', 'index.html'));
 // });
+
+const frontendPath = path.join(__dirname, '..', '..', 'frontend', 'dist');
+console.log('Static Files Path:', frontendPath);
+
+app.use(express.static(frontendPath));
+
+app.get('*', (req, res) => {
+    const indexPath = path.join(frontendPath, 'index.html');
+    console.log('Sending file:', indexPath);
+    res.sendFile(indexPath);
+});
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => {
