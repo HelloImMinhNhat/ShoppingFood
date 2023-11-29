@@ -7,7 +7,7 @@ export default (req: any, res: any, next: any) => {
     if(!token) return res.status(HTTP_UNAUTHORIZED).send();
 
     try {
-        const decodedUser = verify(token, process.env.MONGO_URI!);
+        const decodedUser = verify(token, process.env.JWT_SECRET!);
         req.user = decodedUser;
 
     } catch (error) {
