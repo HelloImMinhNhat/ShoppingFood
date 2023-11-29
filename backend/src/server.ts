@@ -24,10 +24,10 @@ app.use("/api/users", userRouter);
 app.use("/api/orders", orderRouter);
 app.use("/api/categories", categoryRouter);
 
-app.use(express.static('frontend/dict'));
+app.use(express.static(path.join(__dirname, '..', 'frontend', 'dict')));
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname,'frontend', 'dict', 'index.html'))
-})
+    res.sendFile(path.join(__dirname, '..', 'frontend', 'dict', 'index.html'));
+});
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => {
