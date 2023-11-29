@@ -9,7 +9,6 @@ import { dbConnect } from './configs/database.config';
 import orderRouter from './routers/order.router';
 import categoryRouter from './routers/category.router';
 import couponRouter from './routers/coupon.router';
-import { fileURLToPath } from 'url';
 dbConnect();
 
 export const app = express();
