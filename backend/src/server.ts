@@ -11,7 +11,7 @@ import categoryRouter from './routers/category.router';
 import couponRouter from './routers/coupon.router';
 dbConnect();
 
-export const app = express();
+const app = express();
 app.use(express.json());
 app.use(cors({
     credentials: true,
