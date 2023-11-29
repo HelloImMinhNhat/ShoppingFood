@@ -1,6 +1,6 @@
 import dotenv from 'dotenv';
 dotenv.config();
-import path from 'path';
+import path, { dirname } from 'path';
 import express from "express";
 import cors from "cors";
 import foodRouter from './routers/food.router'
@@ -9,6 +9,7 @@ import { dbConnect } from './configs/database.config';
 import orderRouter from './routers/order.router';
 import categoryRouter from './routers/category.router';
 import couponRouter from './routers/coupon.router';
+import { fileURLToPath } from 'url';
 dbConnect();
 
 export const app = express();
@@ -24,10 +25,6 @@ app.use("/api/users", userRouter);
 app.use("/api/orders", orderRouter);
 app.use("/api/categories", categoryRouter);
 
-// app.use(express.static(path.join(__dirname,'..', '..', 'frontend', 'dist','doanweb')));
-// app.get('*', (req, res) => {
-//     res.sendFile(path.join(__dirname,'..', '..', 'frontend', 'dist', 'doanweb','index.html'));
-// });
 app.use(express.static('public'));
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname,'public', 'index.html'))
