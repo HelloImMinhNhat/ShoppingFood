@@ -3,51 +3,38 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.corsOptions = void 0;
 var dotenv_1 = __importDefault(require("dotenv"));
-dotenv_1.default.config();
 var path_1 = __importDefault(require("path"));
 var express_1 = __importDefault(require("express"));
-var cors_1 = __importDefault(require("cors"));
 var food_router_1 = __importDefault(require("./routers/food.router"));
 var user_router_1 = __importDefault(require("./routers/user.router"));
 var database_config_1 = require("./configs/database.config");
 var order_router_1 = __importDefault(require("./routers/order.router"));
 var category_router_1 = __importDefault(require("./routers/category.router"));
 var coupon_router_1 = __importDefault(require("./routers/coupon.router"));
-var urls_1 = require("./share/urls");
+dotenv_1.default.config();
 (0, database_config_1.dbConnect)();
-var app = (0, express_1.default)();
-// const options: cors.CorsOptions = {
-//     allowedHeaders: [
-//         "Origin",
-//         "X-Requested-With",
-//         "Content-Type",
-//         "Accept",
-//         "X-Access-Token",
-//     ],
-//     credentials: true,
-//     methods: "GET,HEAD,OPTIONS,PUT,PATCH,POST,DELETE",
-//     origin: "https://shopping-food.onrender.com/",
-//     preflightContinue: false,
+// export const WHITELIST_DOMAINS = [
+//   'http://localhost:4200/',
+//   'https://shopping-food.onrender.com/'
+// ];
+// type CorsOriginCallback = (err: Error | null, allow?: boolean) => void;
+// export const corsOptions: CorsOptions = {
+//   origin: function (origin: string | undefined, callback: CorsOriginCallback) {
+//     console.log(origin);
+//     if (!origin || WHITELIST_DOMAINS.includes(origin)) {
+//       return callback(null, true);
+//     }
+//     return callback(new Error('Not allowed by CORS'));
+//   },
+//   optionsSuccessStatus: 200,
+//   credentials: true,
 // };
-// app.use(cors(options));
-// app.options('*', cors(options));
-exports.corsOptions = {
-    origin: function (origin, callback) {
-        console.log(origin);
-        // if (!origin && env.BUILD_MODE === "dev") {
-        //   return callback(null, true);
-        // }
-        if (urls_1.WHITELIST_DOMAINS.includes(origin)) {
-            return callback(null, true);
-        }
-        return callback(new Error('Not allowed by CORS'));
-    },
-    optionsSuccessStatus: 200,
-    credentials: true,
-};
-app.use((0, cors_1.default)(exports.corsOptions));
+var app = (0, express_1.default)();
+// app.use(cors({
+//     credentials:true,
+//     origin:["https://shopping-food.onrender.com"]
+// }));
 app.use(express_1.default.json());
 app.use("/api/foods", food_router_1.default);
 app.use("/api/coupons", coupon_router_1.default);
