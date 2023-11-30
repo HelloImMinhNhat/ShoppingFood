@@ -28,7 +28,7 @@ const options: cors.CorsOptions = {
   preflightContinue: false,
 };
 app.use(cors(options));
-
+app.options('*', cors(options));
 // app.use(cors({
 //     credentials: true,
 //     origin: ['http://localhost:4200']
