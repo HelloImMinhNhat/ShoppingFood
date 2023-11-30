@@ -9,30 +9,49 @@ import { dbConnect } from "./configs/database.config";
 import orderRouter from "./routers/order.router";
 import categoryRouter from "./routers/category.router";
 import couponRouter from "./routers/coupon.router";
+import { WHITELIST_DOMAINS } from "./share/urls";
+import { HTTP_BAD_REQUEST } from "./constants/http_status";
 dbConnect();
 
 const app = express();
 
-const options: cors.CorsOptions = {
-    allowedHeaders: [
-        "Origin",
-        "X-Requested-With",
-        "Content-Type",
-        "Accept",
-        "X-Access-Token",
-    ],
-    credentials: true,
-    methods: "GET,HEAD,OPTIONS,PUT,PATCH,POST,DELETE",
-    origin: "https://shopping-food.onrender.com/",
-    preflightContinue: false,
+// const options: cors.CorsOptions = {
+//     allowedHeaders: [
+//         "Origin",
+//         "X-Requested-With",
+//         "Content-Type",
+//         "Accept",
+//         "X-Access-Token",
+//     ],
+//     credentials: true,
+//     methods: "GET,HEAD,OPTIONS,PUT,PATCH,POST,DELETE",
+//     origin: "https://shopping-food.onrender.com/",
+//     preflightContinue: false,
+// };
+// app.use(cors(options));
+// app.options('*', cors(options));
+
+
+export const corsOptions = {
+  origin: function (origin:any, callback:any) {
+    console.log(origin);
+    
+    // if (!origin && env.BUILD_MODE === "dev") {
+    //   return callback(null, true);
+    // }
+
+    if (WHITELIST_DOMAINS.includes(origin)) {
+      return callback(null, true);
+    }
+
+    return callback(new Error('Not allowed by CORS'))
+  },
+
+  optionsSuccessStatus: 200,
+  credentials: true,
 };
-app.use(cors(options));
-app.options('*', cors(options));
+app.use(cors(corsOptions));
 app.use(express.json());
-// app.use(cors({
-    //     credentials: true,
-    //     origin: ['http://localhost:4200']
-// }));
 
 app.use("/api/foods", foodRouter);
 app.use("/api/coupons", couponRouter);
