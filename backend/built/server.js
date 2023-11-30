@@ -26,7 +26,7 @@ var options = {
     ],
     credentials: true,
     methods: "GET,HEAD,OPTIONS,PUT,PATCH,POST,DELETE",
-    origin: "http://localhost:5000",
+    origin: "https://shopping-food.onrender.com/",
     preflightContinue: false,
 };
 app.use((0, cors_1.default)(options));
