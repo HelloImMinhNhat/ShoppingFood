@@ -31,6 +31,7 @@ var options = {
     preflightContinue: false,
 };
 app.use((0, cors_1.default)(options));
+app.options('*', (0, cors_1.default)(options));
 // app.use(cors({
 //     credentials: true,
 //     origin: ['http://localhost:4200']
