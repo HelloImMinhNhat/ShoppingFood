@@ -16,7 +16,6 @@ var category_router_1 = __importDefault(require("./routers/category.router"));
 var coupon_router_1 = __importDefault(require("./routers/coupon.router"));
 (0, database_config_1.dbConnect)();
 var app = (0, express_1.default)();
-app.use(express_1.default.json());
 var options = {
     allowedHeaders: [
         "Origin",
@@ -32,6 +31,7 @@ var options = {
 };
 app.use((0, cors_1.default)(options));
 app.options('*', (0, cors_1.default)(options));
+app.use(express_1.default.json());
 // app.use(cors({
 //     credentials: true,
 //     origin: ['http://localhost:4200']

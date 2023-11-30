@@ -12,26 +12,26 @@ import couponRouter from "./routers/coupon.router";
 dbConnect();
 
 const app = express();
-app.use(express.json());
 
 const options: cors.CorsOptions = {
-  allowedHeaders: [
-    "Origin",
-    "X-Requested-With",
-    "Content-Type",
-    "Accept",
-    "X-Access-Token",
-  ],
-  credentials: true,
-  methods: "GET,HEAD,OPTIONS,PUT,PATCH,POST,DELETE",
-  origin: "http://localhost:4200",
-  preflightContinue: false,
+    allowedHeaders: [
+        "Origin",
+        "X-Requested-With",
+        "Content-Type",
+        "Accept",
+        "X-Access-Token",
+    ],
+    credentials: true,
+    methods: "GET,HEAD,OPTIONS,PUT,PATCH,POST,DELETE",
+    origin: "http://localhost:4200",
+    preflightContinue: false,
 };
 app.use(cors(options));
 app.options('*', cors(options));
+app.use(express.json());
 // app.use(cors({
-//     credentials: true,
-//     origin: ['http://localhost:4200']
+    //     credentials: true,
+    //     origin: ['http://localhost:4200']
 // }));
 
 app.use("/api/foods", foodRouter);
