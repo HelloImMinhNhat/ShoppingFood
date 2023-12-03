@@ -78,22 +78,6 @@ router.get("/", (0, express_async_handler_1.default)(function (req, res) { retur
         }
     });
 }); }));
-// router.get('/users', asyncHandler(async (req, res) => {
-//   const users = await UserModel.find();
-//   res.send(users);
-// }));
-// router.post("/login", asyncHandler(
-//   async (req, res) => {
-//     const { email, password } = req.body;
-//     const user = await UserModel.findOne({ email });
-//     await UserModel.create(sample_users);
-//     res.send("Seed Is Done!");
-//   }
-// ))
-// router.get('/users', asyncHandler(async (req, res) => {
-//   const users = await UserModel.find();
-//   res.send(users);
-// }));
 router.post("/login", (0, express_async_handler_1.default)(function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
     var _a, email, password, user, _b, _c;
     return __generator(this, function (_d) {
@@ -206,7 +190,7 @@ router.post('/register', (0, express_async_handler_1.default)(function (req, res
 var generateTokenReponse = function (user) {
     var token = jsonwebtoken_1.default.sign({
         id: user.id, email: user.email, isAdmin: user.isAdmin
-    }, process.env.MONGO_URI, {
+    }, process.env.JWT_SECRET, {
         expiresIn: "30d"
     });
     return {

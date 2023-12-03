@@ -26,23 +26,6 @@ router.get("/", asyncHandler(
     res.send(users);
   }
 ))
-// router.get('/users', asyncHandler(async (req, res) => {
-//   const users = await UserModel.find();
-//   res.send(users);
-// }));
-// router.post("/login", asyncHandler(
-//   async (req, res) => {
-//     const { email, password } = req.body;
-//     const user = await UserModel.findOne({ email });
-
-//     await UserModel.create(sample_users);
-//     res.send("Seed Is Done!");
-//   }
-// ))
-// router.get('/users', asyncHandler(async (req, res) => {
-//   const users = await UserModel.find();
-//   res.send(users);
-// }));
 router.post("/login", asyncHandler(
   async (req, res) => {
     const { email, password } = req.body;
@@ -120,7 +103,7 @@ router.post('/register', asyncHandler(
 const generateTokenReponse = (user: User) => {
   const token = jwt.sign({
     id: user.id, email: user.email, isAdmin: user.isAdmin
-  }, process.env.MONGO_URI!, {
+  }, process.env.JWT_SECRET!, {
     expiresIn: "30d"
   });
   return {
