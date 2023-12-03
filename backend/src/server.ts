@@ -12,33 +12,12 @@ import couponRouter from "./routers/coupon.router";
 dotenv.config();
 dbConnect();
 
-// export const WHITELIST_DOMAINS = [
-//   'http://localhost:4200/',
-//   'https://shopping-food.onrender.com/'
-// ];
-
-// type CorsOriginCallback = (err: Error | null, allow?: boolean) => void;
-// export const corsOptions: CorsOptions = {
-//   origin: function (origin: string | undefined, callback: CorsOriginCallback) {
-//     console.log(origin);
-
-//     if (!origin || WHITELIST_DOMAINS.includes(origin)) {
-//       return callback(null, true);
-//     }
-
-//     return callback(new Error('Not allowed by CORS'));
-//   },
-
-//   optionsSuccessStatus: 200,
-//   credentials: true,
-// };
-
 const app = express();
 
-// app.use(cors({
-//     credentials:true,
-//     origin:["https://shopping-food.onrender.com"]
-// }));
+app.use(cors({
+    credentials:true,
+    origin:["https://shopping-food.onrender.com","http://localhost:4200"]
+}));
 app.use(express.json());
 
 app.use("/api/foods", foodRouter);
