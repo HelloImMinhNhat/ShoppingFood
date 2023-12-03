@@ -68,7 +68,6 @@ export class CartPageComponent implements OnInit {
       this.percent = discountPercent * 100;
       this.cartService.addCouponToCart(matchedDiscount);
       this.cart.totalPrice_After = this.cart.totalPrice - this.cart.totalPrice * (this.percent / 100);
-      // this.cart.totalPrice_After = this.cart.totalPrice - this.cart.totalPrice * (10 / 100);
     }
   }
 
@@ -125,7 +124,6 @@ export class CartPageComponent implements OnInit {
       this.percent = discountPercent * 100;
       this.cartService.addCouponToCart(matchedDiscount);
       this.cart.totalPrice_After = this.cart.totalPrice - this.cart.totalPrice * (this.percent / 100);
-      console.log(this.cart.totalPrice_After);
       this.tietkiem = this.cart.totalPrice - this.cart.totalPrice_After;
     } else {
       this.toastrService.error(

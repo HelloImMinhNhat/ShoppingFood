@@ -16,7 +16,6 @@ var coupon_router_1 = __importDefault(require("./routers/coupon.router"));
 dotenv_1.default.config();
 (0, database_config_1.dbConnect)();
 var app = (0, express_1.default)();
-// app.use(cors(corsOptions));
 app.use((0, cors_1.default)({
     credentials: true,
     origin: ["https://shopping-food.onrender.com", "http://localhost:4200"]
