@@ -141,6 +141,7 @@ router.post('/create', (0, express_async_handler_1.default)(function (req, res) 
             case 2:
                 encryptedPassword = _b.sent();
                 newUser = {
+                    id: '',
                     name: name,
                     email: email.toLowerCase(),
                     password: encryptedPassword,
@@ -173,6 +174,7 @@ router.post('/register', (0, express_async_handler_1.default)(function (req, res
             case 2:
                 encryptedPassword = _b.sent();
                 newUser = {
+                    id: '',
                     name: name,
                     email: email.toLowerCase(),
                     password: encryptedPassword,
