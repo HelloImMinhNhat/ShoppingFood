@@ -7,7 +7,7 @@ exports.default = (function (req, res, next) {
     if (!token)
         return res.status(http_status_1.HTTP_UNAUTHORIZED).send();
     try {
-        var decodedUser = (0, jsonwebtoken_1.verify)(token, process.env.JWT_SECRET);
+        var decodedUser = (0, jsonwebtoken_1.verify)(token, process.env.MONGO_URI);
         req.user = decodedUser;
     }
     catch (error) {
