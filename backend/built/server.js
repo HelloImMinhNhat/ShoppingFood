@@ -5,8 +5,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var dotenv_1 = __importDefault(require("dotenv"));
 var path_1 = __importDefault(require("path"));
-var fs_1 = __importDefault(require("fs"));
-var https_1 = __importDefault(require("https"));
 var express_1 = __importDefault(require("express"));
 var cors_1 = __importDefault(require("cors"));
 var food_router_1 = __importDefault(require("./routers/food.router"));
@@ -32,16 +30,7 @@ app.use(express_1.default.static("public"));
 app.get("*", function (req, res) {
     res.sendFile(path_1.default.join(__dirname, "public", "index.html"));
 });
-// const port = process.env.PORT || 5000;
-// app.listen(port, () => {
-//   console.log("Website served on http://localhost:" + port);
-// });
-var privateKey = fs_1.default.readFileSync('path/to/private-key.pem', 'utf8');
-var certificate = fs_1.default.readFileSync('path/to/certificate.pem', 'utf8');
-var ca = fs_1.default.readFileSync('path/to/ca.pem', 'utf8');
-var credentials = { key: privateKey, cert: certificate, ca: ca };
-var httpsServer = https_1.default.createServer(credentials, app);
 var port = process.env.PORT || 5000;
-httpsServer.listen(port, function () {
-    console.log("Website served on https://shopping-food.onrender.com:".concat(port));
+app.listen(port, function () {
+    console.log("Website served on http://localhost:" + port);
 });
