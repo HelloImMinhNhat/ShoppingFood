@@ -7,10 +7,12 @@ exports.default = (function (req, res, next) {
     if (!token)
         return res.status(http_status_1.HTTP_UNAUTHORIZED).send();
     try {
-        var decodedUser = (0, jsonwebtoken_1.verify)(token, process.env.JWT_SECRET );
+        var decodedUser = (0, jsonwebtoken_1.verify)(token, process.env.JWT_SECRET);
         req.user = decodedUser;
+        return next();
     }
     catch (error) {
+        console.error("JWT verification failed:", error);
         res.status(http_status_1.HTTP_UNAUTHORIZED).send();
     }
     return next();

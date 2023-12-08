@@ -1,4 +1,4 @@
-import mongoose, {Schema, Types, model} from 'mongoose';
+import {Schema, model} from 'mongoose';
 
 export interface User{
     id: string;

@@ -9,8 +9,9 @@ export default (req: any, res: any, next: any) => {
     try {
         const decodedUser = verify(token, process.env.JWT_SECRET!);
         req.user = decodedUser;
-
+        return next();
     } catch (error) {
+        console.error("JWT verification failed:", error);
         res.status(HTTP_UNAUTHORIZED).send();
     }
 

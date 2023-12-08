@@ -10,8 +10,5 @@
         "postbuild": "move frontend\\dist\\doanweb backend\\built\\public"
     },
     "dependencies": {
-        "cors": "^2.8.5",
-        "path": "^0.12.7",
-        "url": "^0.11.3"
     }
 }
