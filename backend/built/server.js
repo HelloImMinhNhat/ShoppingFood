@@ -18,7 +18,7 @@ dotenv_1.default.config();
 var app = (0, express_1.default)();
 app.use((0, cors_1.default)({
     credentials: true,
-    origin: ["https://shopping-food.onrender.com", "http://localhost:4200", "http://localhost:5000"]
+    origin: ["https://shopping-food.onrender.com", "http://localhost:4200", "http://localhost:10000"]
 }));
 app.use(express_1.default.json());
 app.use("/api/foods", food_router_1.default);
