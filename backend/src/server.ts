@@ -1,7 +1,5 @@
 import dotenv from "dotenv";
 import path from "path";
-import fs from 'fs';
-import https from 'https';
 import express from "express";
 import cors, { CorsOptions } from "cors";
 import foodRouter from "./routers/food.router";
@@ -10,7 +8,7 @@ import { dbConnect } from "./configs/database.config";
 import orderRouter from "./routers/order.router";
 import categoryRouter from "./routers/category.router";
 import couponRouter from "./routers/coupon.router";
-
+import jwtMiddleware from "./middlewares/auth.mid";
 dotenv.config();
 dbConnect();
 
@@ -21,6 +19,7 @@ app.use(cors({
     origin:["https://shopping-food.onrender.com","http://localhost:4200"]
 }));
 app.use(express.json());
+app.use(jwtMiddleware);
 
 app.use("/api/foods", foodRouter);
 app.use("/api/coupons", couponRouter);
