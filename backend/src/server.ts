@@ -18,7 +18,7 @@ const app = express();
 
 app.use(cors({
     credentials:true,
-    origin:["https://shopping-food.onrender.com/","http://localhost:4200/"]
+    origin:["https://shopping-food.onrender.com","http://localhost:4200"]
 }));
 app.use(express.json());
 
