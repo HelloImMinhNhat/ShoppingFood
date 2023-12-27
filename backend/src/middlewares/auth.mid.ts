@@ -4,15 +4,10 @@ import { HTTP_UNAUTHORIZED } from "../constants/http_status";
 
 export default (req: any, res: any, next: any) => {
     const token = req.headers.access_token as string;
-    const jwtSecret = process.env.JWT_SECRET;
-
-    if (!jwtSecret) {
-        console.error("JWT_SECRET is not defined in the environment variables.");
-        return res.status(HTTP_UNAUTHORIZED).send();
-    }
+    if(!token) return res.status(HTTP_UNAUTHORIZED).send();
 
     try {
-        const decodedUser = verify(token, jwtSecret);
+        const decodedUser = verify(token, process.env.JWT_SECRET!);
         req.user = decodedUser;
         return next();
     } catch (error) {

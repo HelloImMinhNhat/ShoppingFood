@@ -13,7 +13,6 @@ var database_config_1 = require("./configs/database.config");
 var order_router_1 = __importDefault(require("./routers/order.router"));
 var category_router_1 = __importDefault(require("./routers/category.router"));
 var coupon_router_1 = __importDefault(require("./routers/coupon.router"));
-var auth_mid_1 = __importDefault(require("./middlewares/auth.mid"));
 dotenv_1.default.config();
 (0, database_config_1.dbConnect)();
 var app = (0, express_1.default)();
@@ -22,7 +21,6 @@ app.use((0, cors_1.default)({
     origin: ["https://shopping-food.onrender.com", "http://localhost:4200"]
 }));
 app.use(express_1.default.json());
-app.use(auth_mid_1.default);
 app.use("/api/foods", food_router_1.default);
 app.use("/api/coupons", coupon_router_1.default);
 app.use("/api/users", user_router_1.default);
