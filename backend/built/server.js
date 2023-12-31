@@ -18,7 +18,7 @@ dotenv_1.default.config();
 var app = (0, express_1.default)();
 app.use((0, cors_1.default)({
     credentials: true,
-    origin: ["https://shopping-food.onrender.com", "http://localhost:4200", "http://localhost:5000"]
+    origin: ["https://shopping-food.onrender.com", "http://localhost:4200", "http://localhost:5000,apiBaseUrl"]
 }));
 app.use(express_1.default.json());
 app.use("/api/foods", food_router_1.default);
@@ -31,6 +31,7 @@ app.get("*", function (req, res) {
     res.sendFile(path_1.default.join(__dirname, "public", "index.html"));
 });
 var port = process.env.PORT || 5000;
+var apiBaseUrl = process.env.API_BASE_URL || "http://localhost:".concat(port);
 app.listen(port, function () {
-    console.log("Website served on http://localhost:" + port);
+    console.log("Website served on ".concat(apiBaseUrl));
 });

@@ -15,7 +15,7 @@ const app = express();
 
 app.use(cors({
     credentials:true,
-    origin:["https://shopping-food.onrender.com","http://localhost:4200","http://localhost:5000"]
+    origin:["https://shopping-food.onrender.com","http://localhost:4200","http://localhost:5000,apiBaseUrl"]
 }));
 app.use(express.json());
 
@@ -31,7 +31,7 @@ app.get("*", (req, res) => {
 });
 
 const port = process.env.PORT || 5000;
+const apiBaseUrl = process.env.API_BASE_URL || `http://localhost:${port}`;
 app.listen(port, () => {
-  console.log("Website served on http://localhost:" + port);
+  console.log(`Website served on ${apiBaseUrl}`);
 });
-
